@@ -4,6 +4,7 @@ import yaml
 from telebot import types
 from method_pipelines.new_record import NewRecordPipeline
 from method_pipelines.remove_last_record import RemoveLastRecordPipeline
+from method_pipelines.get_dataframe import GetRecordPipeline
 
 
 menu_commands = {
@@ -30,17 +31,18 @@ if __name__ == "__main__":
     @bot.message_handler(commands=['new_record'])
     def new_record(message: types.Message):
         pipeline = NewRecordPipeline(bot)
-        pipeline.new_record(message)
+        pipeline(message)
 
 
     @bot.message_handler(commands=['remove_last_record'])
     def remove_last_record(message: types.Message):
         pipeline = RemoveLastRecordPipeline(bot)
-        pipeline.remove_last_record(message)
+        pipeline(message)
 
 
     @bot.message_handler(commands=['get_dataframe'])
     def get_dataframe(message: types.Message):
-        pass
+        pipeline = GetRecordPipeline(bot)
+        pipeline(message)
 
     bot.polling(none_stop=True, interval=0)

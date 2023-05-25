@@ -8,7 +8,7 @@ class NewRecordPipeline:
         self.cache = []
         self.bot = bot
 
-    def new_record(self, message: types.Message):
+    def __call__(self, message: types.Message):
         self.bot.send_message(message.chat.id, 'Оцени свое настроение по шкале от 1 до 5')
         self.bot.register_next_step_handler(message, self.__get_emoji)
 

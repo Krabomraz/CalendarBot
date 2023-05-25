@@ -7,7 +7,7 @@ class RemoveLastRecordPipeline:
     def __init__(self, bot: telebot.TeleBot):
         self.bot = bot
 
-    def remove_last_record(self, message: types.Message):
+    def _call__(self, message: types.Message):
         self.bot.send_message(message.chat.id, 'Для подтверждения удаления последней записи напиши слово "удалить"')
         self.bot.register_next_step_handler(message, self.__approve_removing)
 

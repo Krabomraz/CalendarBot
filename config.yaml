@@ -1,2 +1,8 @@
-telegram_bot_token: '6079270723:AAE2RLHn-OgV16B-92kPimlXYFu4WaiFb1w'
+# calendar-bot token
+# telegram_bot_token: '6079270723:AAE2RLHn-OgV16B-92kPimlXYFu4WaiFb1w'
+
+# debug-bot token
+telegram_bot_token: '6007193142:AAGkP1Qg5HoguoYIz9uASh4wukaoXv6pkcg'
+
+
 path2records: 'data/records.csv'
